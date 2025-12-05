@@ -52,7 +52,7 @@ def train():
             # 2
             predictions = model(input_ids, attention_mask)
             # 3
-            # we use label.view(-1, 1) to make it as a column vector not a row vector
+            # we use label.view(-1, 1) to make it as a column vector not a row vector .. not [[256]] but [[256, 1]]
             loss = criterion(predictions, labels.view(-1, 1))
             # 4
             loss.backward()
